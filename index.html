@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Rock Paper Scissors Game</title>
+
+</head>
+<body>
+    <script>
+        function computerPlay(){
+            let gameWords = ["rock", "paper", "scissors"];
+            return gameWords[Math.floor(Math.random()*gameWords.length)];
+            }
+            
+        function singleRound(playerSelection, computerSelection){
+            if ((computerSelection=="rock"&& playerSelection=="scissors") || (computerSelection=="paper"&&playerSelection=="rock") || (computerSelection=="scissors" && playerSelection=="paper")){
+                return alert("Computer beats Player");
+            } else if ((playerSelection=="rock"&& computerSelection=="scissors") || (playerSelection=="paper"&& computerSelection=="rock") || (playerSelection=="scissors" && computerSelection=="paper")) {
+                return alert("Player beats Computer");
+            } else
+                return alert("TIE");
+        }
+        let computerSelection = computerPlay();
+             console.log(computerSelection);
+        let playerSelection= prompt("enter your choice among rock paper scissors");
+        let result = singleRound(playerSelection, computerSelection);
+    </script>
+
+
+</body>
+
+</html>
