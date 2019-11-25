@@ -11,7 +11,7 @@
                 for (let i=0; i<5; i++){
         
                     let computerSelection = computerPlay();
-                    console.log(computerSelection);
+                    //console.log(computerSelection);
                     let playerInput= prompt("enter your choice among :: Rock Paper Scissors");
                     let playerSelection=playerInput.toLowerCase();
 
@@ -21,17 +21,20 @@
                     }
             
                     if ((computerSelection=="rock"&& playerSelection=="scissors") || (computerSelection=="paper"&&playerSelection=="rock") || (computerSelection=="scissors" && playerSelection=="paper")){
+                        
                         computerScore=(+computerScore + +1);
                     } else if ((playerSelection=="rock"&& computerSelection=="scissors") || (playerSelection=="paper"&& computerSelection=="rock") || (playerSelection=="scissors" && computerSelection=="paper")) {
+                        
                         playerScore=(+playerScore + +1);
                     } else {
                         playerScore= (+playerScore + +0);
                         computerScore= (+computerScore + +0);
                     }
-        
+                console.log("playerScore is: "+playerScore);
+                console.log("computerScore is: "+computerScore);            
                 }
-            console.log(playerScore);
-            console.log(computerScore);
+            console.log("Final playerScore is: "+playerScore);
+            console.log("Final computerScore is: "+computerScore);
             if (computerScore>playerScore) { alert("Computer beats Player by "+" " + (+computerScore - + playerScore));
             } else if (computerScore<playerScore) {alert("Player beats Computer by" + " " + (+playerScore - +computerScore));
             } else alert("Tie");
